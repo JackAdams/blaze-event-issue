@@ -1,0 +1,17 @@
+<head>
+  <title>blaze-propagation-issue</title>
+</head>
+
+<body>
+  {{> hello}}
+</body>
+
+<template name="hello">
+<h2>Open the console and click the 'Click here' button</h2>
+  <ul id="accordion">
+    <li>
+      <h3>panel name<input type="button" value="Click here" /></h3>
+      <div>panel content -- we shouldn't be seeing this because the click event should have been stopped by evt.stopPropagation()</div>
+    </li>
+  </ul>
+</template>
